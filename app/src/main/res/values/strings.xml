@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">AxAtb-droid</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="age">Idade</string>
+    <string name="weight"> Peso</string>
+    <string name="type_surgery">Tipo de cirurgia</string>
+    <string name="allergies">Alergias</string>
+    <string name="APENDICITE_NAO_PERFURADA">Apendicite não perfurada</string>
+    <string name="CABECA_PESCOCO">Cabeça e pescoço</string>
+    <string name="CARDIACA">Cardiáca</string>
+    <string name="CESARIA">Cesária</string>
+    <string name="CISTOCOPIA">Cistocopia</string>
+    <string name="COLORRETAL">Colorretal</string>
+    <string name="GASTROINTESTINAL_ALTO">Gastrointestinal Alto (Esôfago, estômago e duodeno</string>
+    <string name="GENITO_URINARIO_ABERTO">Genito-urinário aberto</string>
+    <string name="GINECOLOGICA">Ginecológica</string>
+    <string name="NEUROLOGICA">Neurológica</string>
+    <string name="ORTOPEDICA">Ortopédica</string>
+    <string name="PLASTICA">Plástica</string>
+    <string name="TORACICA">Torácica</string>
+    <string name="TRAUMA_ABERTO">Trauma aberto (fraturas expostas)</string>
+    <string name="VASCULAR">Vascular</string>
 </resources>
