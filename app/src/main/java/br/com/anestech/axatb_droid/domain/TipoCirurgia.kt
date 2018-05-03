@@ -21,6 +21,8 @@ enum class TipoCirurgia (val string: Int) {
     PLASTICA(R.string.PLASTICA),
     TORACICA(R.string.TORACICA),
     TRAUMA_ABERTO(R.string.TRAUMA_ABERTO),
-    VASCULAR(R.string.VASCULAR)
+    VASCULAR(R.string.VASCULAR);
+
+
 
 }

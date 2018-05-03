@@ -2,18 +2,20 @@ package br.com.anestech.axatb_droid.activity
 
 import android.os.Bundle
 import android.support.design.widget.NavigationView
-import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ArrayAdapter
 import br.com.anestech.axatb_droid.R
 import br.com.anestech.axatb_droid.extensions.setupToolbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.content_main.*
+import android.widget.Toast
+
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,6 +32,17 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+
+
+        // Carregar a Listar
+
+        val adapter = ArrayAdapter.createFromResource(
+                context,
+                R.array.type_surgery,
+                android.R.layout.simple_spinner_dropdown_item
+        )
+        spinner_type_surgery.adapter = adapter
+
     }
 
     override fun onBackPressed() {
@@ -82,4 +95,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
+
 }

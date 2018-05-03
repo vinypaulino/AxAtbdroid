@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="type_surgery">
+        <item>Apendicite não perfurada</item>
+        <item>Cabeça e Pescoço</item>
+        <item>Cardiáca</item>
+        <item>Cesária</item>
+        <item>Cistoscopia</item>
+        <item>Colorretal</item>
+        <item>Gastrointestinal Alto (Esôfago, estômago e duodeno)</item>
+        <item>Genito-urinário aberto</item>
+        <item>Ginecológica</item>
+        <item>Neurológica</item>
+        <item>Ortopédica</item>
+        <item>Plástica</item>
+        <item>Torácica</item>
+        <item>Trauma aberto (fraturas expostas)</item>
+        <item>Vascular</item>
+    </string-array>
+
+    <string-array name="allergies">
+        <item>Sem alergias</item>
+        <item>Cefalosporinas</item>
+        <item>Penicilina</item>
+        <item>Sulfonamidas</item>
+    </string-array>
+
+
+</resources>

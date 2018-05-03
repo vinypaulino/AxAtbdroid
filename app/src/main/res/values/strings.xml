@@ -25,4 +25,5 @@
     <string name="TORACICA">Torácica</string>
     <string name="TRAUMA_ABERTO">Trauma aberto (fraturas expostas)</string>
     <string name="VASCULAR">Vascular</string>
+    <string name="allergy_cephalosporins">Cefalosporinas</string>
 </resources>
