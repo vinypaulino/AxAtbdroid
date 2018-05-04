@@ -15,14 +15,6 @@ import br.com.anestech.axatb_droid.extensions.setupToolbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
-import android.widget.Toast
-import br.com.anestech.axatb_droid.R.layout.textview_for_spinner
-import com.androidbuts.multispinnerfilter.KeyPairBoolData
-import java.util.*
-import com.androidbuts.multispinnerfilter.MultiSpinnerListener
-import com.androidbuts.multispinnerfilter.MultiSpinner
-
-
 
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
