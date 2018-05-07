@@ -10,43 +10,66 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.ArrayAdapter.createFromResource
+import android.widget.Toast
 import br.com.anestech.axatb_droid.R
+import br.com.anestech.axatb_droid.domain.Paciente
 import br.com.anestech.axatb_droid.extensions.setupToolbar
+import br.com.anestech.axatb_droid.extensions.toast
+import br.com.anestech.axatb_droid.helper.PacienteHelper
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
+    var paciente : Paciente? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setupToolbar(R.id.toolbar, "Antibioticoprofilaxia Cirúrgica")
+
 
 //        fab.setOnClickListener { view ->
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                    .setAction("Action", null).show()
 //        }
 
-        val toggle = ActionBarDrawerToggle(
-                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        drawer_layout.addDrawerListener(toggle)
-        toggle.syncState()
+        configuraNavDrawer()
 
-        nav_view.setNavigationItemSelectedListener(this)
+        carregaSpinnerTipoCirurgia()
+
+        btn_profilaxia_recomendada.setOnClickListener{
+            val view = window.decorView
+
+            val paciente = PacienteHelper().carregaPaciente(view)
+
+            toast(" ${paciente?.idade} peso ${paciente?.peso} ${paciente?.tipoCirurgia} " +
+                    " Alergia cefa ${paciente?.alergia_cefalosporinas}" +
+                    " Alergia peni ${paciente?.alergia_penicilina}" +
+                     " Alergia Sul ${paciente?.alergia_sulfonamidas}" +
+                    " é crianca ? ${paciente?.eCrianca()}", Toast.LENGTH_LONG)
+        }
+
+    }
 
 
-        // Carregar a Listar
 
+    private fun carregaSpinnerTipoCirurgia() {
         val adapter = createFromResource(
                 context,
                 R.array.type_surgery,
                 android.R.layout.simple_spinner_dropdown_item
         )
         spinner_type_surgery.adapter = adapter
+    }
 
+    private fun configuraNavDrawer() {
+        val toggle = ActionBarDrawerToggle(
+                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        drawer_layout.addDrawerListener(toggle)
+        toggle.syncState()
 
-
+        nav_view.setNavigationItemSelectedListener(this)
     }
 
     override fun onBackPressed() {

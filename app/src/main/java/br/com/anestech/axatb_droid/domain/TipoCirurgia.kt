@@ -7,6 +7,7 @@ import br.com.anestech.axatb_droid.R
  */
 enum class TipoCirurgia (val string: Int) {
 
+
     APENDICITE_NAO_PERFURADA(R.string.APENDICITE_NAO_PERFURADA),
     CABECA_PESCOCO(R.string.CABECA_PESCOCO),
     CARDIACA(R.string.CARDIACA),
@@ -22,6 +23,8 @@ enum class TipoCirurgia (val string: Int) {
     TORACICA(R.string.TORACICA),
     TRAUMA_ABERTO(R.string.TRAUMA_ABERTO),
     VASCULAR(R.string.VASCULAR);
+
+    val listTipoCirurgia = listOf<TipoCirurgia>()
 
 
 
