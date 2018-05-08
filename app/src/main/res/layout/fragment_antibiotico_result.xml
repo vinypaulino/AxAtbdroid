@@ -1,0 +1,280 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/antibiotico_result_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
+    tools:context="br.com.anestech.axatb_droid.fragments.AntibioticoResultFragment">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_constraint"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <view
+                android:id="@+id/view3"
+                class="android.support.design.widget.AppBarLayout"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_margin="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_antibiotico_result"
+                app:layout_constraintVertical_bias="0.008" />
+
+            <view
+                android:id="@+id/view6"
+                class="android.support.design.widget.AppBarLayout"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_margin="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_repique_resultado"
+                app:layout_constraintVertical_bias="0.008" />
+
+            <TextView
+                android:id="@+id/txt_titulo_tempo_dose_resultado"
+                style="@style/titulo_antibiotico_resultado"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Tempo da dose antes da incisão"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_dose_preconizada_resultado"
+                app:layout_constraintTop_toBottomOf="@+id/view4"
+                app:layout_constraintVertical_bias="0.018" />
+
+            <TextView
+                android:id="@+id/txt_repique_resultado"
+                style="@style/descricao_antibiotico_resultado"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Repique de 6/6 horas durante o procedimento e Gentamicina em dose única"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_titulo_repique_resultado"
+                app:layout_constraintTop_toBottomOf="@+id/txt_titulo_repique_resultado"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <view
+                android:id="@+id/view4"
+                class="android.support.design.widget.AppBarLayout"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_margin="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_dose_preconizada_resultado"
+                app:layout_constraintVertical_bias="0.008" />
+
+            <TextView
+                android:id="@+id/txt_titulo_repique_resultado"
+                style="@style/titulo_antibiotico_resultado"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="4dp"
+                android:text="Repique"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_tempo_dose_resultado"
+                app:layout_constraintTop_toBottomOf="@+id/view5"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/txt_antibioticoprofilaxia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:text="Antibióticoprofilaxia"
+                android:textAppearance="@android:style/TextAppearance.Material.WindowTitle"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.015" />
+
+            <TextView
+                android:id="@+id/txt_titulo_prescricao_resultado"
+                style="@style/titulo_antibiotico_resultado"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="4dp"
+                android:text="Prescrição"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_repique_resultado"
+                app:layout_constraintTop_toBottomOf="@+id/view6"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <view
+                android:id="@+id/view5"
+                class="android.support.design.widget.AppBarLayout"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_margin="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_tempo_dose_resultado"
+                app:layout_constraintVertical_bias="0.008" />
+
+            <TextView
+                android:id="@+id/txt_titulo_dosepreconizada_resultado"
+                style="@style/titulo_antibiotico_resultado"
+                android:layout_height="17dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="4dp"
+                android:text="Dose Preconizada"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_antibiotico_result"
+                app:layout_constraintTop_toBottomOf="@+id/view3"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/txt_tempo_dose_resultado"
+                style="@style/descricao_antibiotico_resultado"
+                android:layout_width="0dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Administrar 30-60 minutos durante o procedimento e Gentamicina em dose unica"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_titulo_tempo_dose_resultado"
+                app:layout_constraintTop_toBottomOf="@+id/txt_titulo_tempo_dose_resultado"
+                app:layout_constraintVertical_bias="0.008" />
+
+            <TextView
+                android:id="@+id/txt_titulo_tipo_cirurgia"
+                style="@style/titulo_antibiotico_resultado"
+                android:text="Tipo de cirurgia"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.083"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_antibioticoprofilaxia"
+                app:layout_constraintVertical_bias="0.036" />
+
+            <TextView
+                android:id="@+id/txt_tipo_cirurgia_result"
+                style="@style/descricao_antibiotico_resultado"
+                android:text="@string/APENDICITE_NAO_PERFURADA"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_titulo_tipo_cirurgia"
+                app:layout_constraintTop_toBottomOf="@+id/txt_titulo_tipo_cirurgia"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <view
+                android:id="@+id/view2"
+                class="android.support.design.widget.AppBarLayout"
+                id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_margin="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_tipo_cirurgia_result"
+                app:layout_constraintVertical_bias="0.007" />
+
+            <TextView
+                android:id="@+id/txt_titulo_antibiotico"
+                style="@style/titulo_antibiotico_resultado"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/antibiotico"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_titulo_tipo_cirurgia"
+                app:layout_constraintTop_toBottomOf="@+id/view2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/txt_dose_preconizada_resultado"
+                style="@style/descricao_antibiotico_resultado"
+                android:layout_width="0dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="Clindamicina 900mg + Gentamicina 350mg (5mg/Kg)"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.294"
+                app:layout_constraintStart_toStartOf="@+id/txt_titulo_dosepreconizada_resultado"
+                app:layout_constraintTop_toBottomOf="@+id/txt_titulo_dosepreconizada_resultado"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/txt_antibiotico_result"
+                style="@style/descricao_antibiotico_resultado"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Clindamicina + Gentamicina 350mg (5mg/Kg)"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_titulo_antibiotico"
+                app:layout_constraintTop_toBottomOf="@+id/txt_titulo_antibiotico"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/txt_prescricao_resultado"
+                style="@style/descricao_antibiotico_resultado"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Suspender após o procedimento"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_titulo_prescricao_resultado"
+                app:layout_constraintTop_toBottomOf="@+id/txt_titulo_prescricao_resultado"
+                app:layout_constraintVertical_bias="0.0" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>
