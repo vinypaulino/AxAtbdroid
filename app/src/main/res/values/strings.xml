@@ -26,4 +26,8 @@
     <string name="TRAUMA_ABERTO">Trauma aberto (fraturas expostas)</string>
     <string name="VASCULAR">Vascular</string>
     <string name="allergy_cephalosporins">Cefalosporinas</string>
+    <string name="antibiotico">Antibiótico</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
