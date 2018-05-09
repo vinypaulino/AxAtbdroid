@@ -44,3 +44,13 @@ fun AppCompatActivity.addFragment(@IdRes layoutId: Int, fragment: Fragment){
     ft.add(layoutId, fragment)
     ft.commit()
 }
+
+fun AppCompatActivity.addFragment(layoutId: Int, fragment: Fragment, laytoutId2: Int, fragment2: Fragment){
+    fragment.arguments = intent.extras
+    fragment2.arguments = intent.extras
+
+    val ft = supportFragmentManager.beginTransaction()
+    ft.add(layoutId, fragment)
+    ft.add(laytoutId2, fragment2)
+    ft.commit()
+}

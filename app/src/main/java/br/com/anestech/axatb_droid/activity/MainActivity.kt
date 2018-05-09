@@ -1,28 +1,24 @@
 package br.com.anestech.axatb_droid.activity
 
+
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.ArrayAdapter.createFromResource
-import android.widget.Toast
 import br.com.anestech.axatb_droid.R
 import br.com.anestech.axatb_droid.domain.Paciente
+import br.com.anestech.axatb_droid.extensions.addFragment
 import br.com.anestech.axatb_droid.extensions.setupToolbar
-import br.com.anestech.axatb_droid.extensions.toast
-import br.com.anestech.axatb_droid.helper.PacienteHelper
+import br.com.anestech.axatb_droid.fragments.LancamentoFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
-import kotlinx.android.synthetic.main.content_main.*
 
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
     var paciente : Paciente? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,32 +32,32 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         configuraNavDrawer()
 
-        carregaSpinnerTipoCirurgia()
+        addFragment(R.id.frame_lancamento, LancamentoFragment())
 
-        btn_profilaxia_recomendada.setOnClickListener{
-            val view = window.decorView
-
-            val paciente = PacienteHelper().carregaPaciente(view)
-
-            toast(" ${paciente?.idade} peso ${paciente?.peso} ${paciente?.tipoCirurgia} " +
-                    " Alergia cefa ${paciente?.alergia_cefalosporinas}" +
-                    " Alergia peni ${paciente?.alergia_penicilina}" +
-                     " Alergia Sul ${paciente?.alergia_sulfonamidas}" +
-                    " é crianca ? ${paciente?.eCrianca()}", Toast.LENGTH_LONG)
-        }
+//        carregaSpinnerTipoCirurgia()
+//
+//        btn_profilaxia_recomendada.setOnClickListener{
+//            val view = window.decorView
+//
+//            val paciente = PacienteHelper().carregaPaciente(view)
+//
+//            val intent = Intent(context, ResultActivity::class.java)
+//            intent.putExtra("paciente", paciente)
+//            startActivity(intent)
+//        }
 
     }
 
 
 
-    private fun carregaSpinnerTipoCirurgia() {
-        val adapter = createFromResource(
-                context,
-                R.array.type_surgery,
-                android.R.layout.simple_spinner_dropdown_item
-        )
-        spinner_type_surgery.adapter = adapter
-    }
+//    private fun carregaSpinnerTipoCirurgia() {
+//        val adapter = createFromResource(
+//                context,
+//                R.array.type_surgery,
+//                android.R.layout.simple_spinner_dropdown_item
+//        )
+//        spinner_type_surgery.adapter = adapter
+//    }
 
     private fun configuraNavDrawer() {
         val toggle = ActionBarDrawerToggle(
