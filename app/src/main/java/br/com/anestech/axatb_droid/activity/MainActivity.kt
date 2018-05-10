@@ -13,7 +13,7 @@ import br.com.anestech.axatb_droid.extensions.addFragment
 import br.com.anestech.axatb_droid.extensions.setupToolbar
 import br.com.anestech.axatb_droid.fragments.LancamentoFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.toolbar.*
 
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -31,33 +31,9 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 //        }
 
         configuraNavDrawer()
-
         addFragment(R.id.frame_lancamento, LancamentoFragment())
-
-//        carregaSpinnerTipoCirurgia()
-//
-//        btn_profilaxia_recomendada.setOnClickListener{
-//            val view = window.decorView
-//
-//            val paciente = PacienteHelper().carregaPaciente(view)
-//
-//            val intent = Intent(context, ResultActivity::class.java)
-//            intent.putExtra("paciente", paciente)
-//            startActivity(intent)
-//        }
-
     }
 
-
-
-//    private fun carregaSpinnerTipoCirurgia() {
-//        val adapter = createFromResource(
-//                context,
-//                R.array.type_surgery,
-//                android.R.layout.simple_spinner_dropdown_item
-//        )
-//        spinner_type_surgery.adapter = adapter
-//    }
 
     private fun configuraNavDrawer() {
         val toggle = ActionBarDrawerToggle(
@@ -73,6 +49,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             drawer_layout.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
+
         }
     }
 

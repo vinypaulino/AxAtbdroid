@@ -1,28 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:fillViewport="true"
-    android:scrollbars = "vertical"
-    android:scrollbarStyle="insideInset"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="br.com.anestech.axatb_droid.activity.ResultActivity">
 
-      <LinearLayout
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:orientation="vertical">
+          android:orientation="vertical"
+          xmlns:tools="http://schemas.android.com/tools"
+          tools:context="br.com.anestech.axatb_droid.activity.ResultActivity">
 
-        <FrameLayout
-            android:id="@+id/frame_result"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+    <include layout="@layout/toolbar" />
 
-        <FrameLayout
-            android:id="@+id/frame_antibiotico_result"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-      </LinearLayout>
-</ScrollView>
+         <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:fillViewport="true"
+                android:scrollbars = "vertical"
+                android:scrollbarStyle="insideInset">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/frame_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <FrameLayout
+                    android:id="@+id/frame_antibiotico_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+             </LinearLayout>
+
+         </ScrollView>
+
+</LinearLayout>
+
 
 
