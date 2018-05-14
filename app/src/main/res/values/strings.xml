@@ -11,12 +11,12 @@
     <string name="type_surgery">Tipo de cirurgia</string>
     <string name="allergies">Alergias</string>
     <string name="APENDICITE_NAO_PERFURADA">Apendicite não perfurada</string>
-    <string name="CABECA_PESCOCO">Cabeça e pescoço</string>
+    <string name="CABECA_PESCOCO">Cabeça e Pescoço</string>
     <string name="CARDIACA">Cardiáca</string>
     <string name="CESARIA">Cesária</string>
-    <string name="CISTOCOPIA">Cistocopia</string>
+    <string name="CISTOCOPIA">Cistoscopia</string>
     <string name="COLORRETAL">Colorretal</string>
-    <string name="GASTROINTESTINAL_ALTO">Gastrointestinal Alto (Esôfago, estômago e duodeno</string>
+    <string name="GASTROINTESTINAL_ALTO">Gastrointestinal Alto (Esôfago, estômago e duodeno)</string>
     <string name="GENITO_URINARIO_ABERTO">Genito-urinário aberto</string>
     <string name="GINECOLOGICA">Ginecológica</string>
     <string name="NEUROLOGICA">Neurológica</string>

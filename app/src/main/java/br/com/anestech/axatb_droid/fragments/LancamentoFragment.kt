@@ -9,7 +9,10 @@ import android.widget.ArrayAdapter.createFromResource
 import android.widget.Toast
 import br.com.anestech.axatb_droid.R
 import br.com.anestech.axatb_droid.activity.ResultActivity
+import br.com.anestech.axatb_droid.domain.Antibiotico
 import br.com.anestech.axatb_droid.domain.Paciente
+import br.com.anestech.axatb_droid.domain.TipoCirurgia
+import br.com.anestech.axatb_droid.helper.CalculosHelper
 import br.com.anestech.axatb_droid.helper.PacienteHelper
 import kotlinx.android.synthetic.main.fragment_lancamento.*
 import kotlinx.android.synthetic.main.fragment_lancamento.view.*
@@ -18,12 +21,15 @@ import kotlinx.android.synthetic.main.fragment_lancamento.view.*
 class LancamentoFragment : BaseFragment() {
 
     private var paciente : Paciente? = null
+    private var tipoCirurgia = null
+    private var antibiotico = Antibiotico()
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         var view = inflater!!.inflate(R.layout.fragment_lancamento, container, false)
 
         carregaSpinnerTipoCirurgia(view)
+
 
         return view
     }
@@ -34,17 +40,27 @@ class LancamentoFragment : BaseFragment() {
 
             paciente = PacienteHelper(context, this.view!!).carregaPaciente()
 
-
             if (paciente?.idade!!.equals(0) || paciente?.peso!!.equals(0.0f)){
                 return@setOnClickListener
             }
 
-            Toast.makeText(context, "idade ${paciente?.idade} tipo ${paciente?.tipoCirurgia} sulfo ${paciente?.alergia_sulfonamidas} ", Toast.LENGTH_LONG).show()
+            val calculosHelper = CalculosHelper(
+                    context,
+                    paciente = paciente!!,
+                    antibiotico = antibiotico
+            )
+
+            calculosHelper.escolheCalculoPorCirurgia()
+
 
             val intent = Intent(context, ResultActivity::class.java)
+            intent.putExtra("paciente", paciente)
+            intent.putExtra("antibiotico", antibiotico)
             startActivity(intent)
         }
     }
+
+
 
     private fun carregaSpinnerTipoCirurgia(view: View) {
         val adapter = createFromResource(

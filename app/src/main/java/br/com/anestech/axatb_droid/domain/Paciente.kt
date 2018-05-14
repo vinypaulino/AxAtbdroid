@@ -14,8 +14,8 @@ class Paciente : Serializable  {
     var alergia_penicilina: Boolean = false
     var alergia_sulfonamidas: Boolean = false
 
-    fun eCrianca(): Boolean {
-        if (idade <= 12) {
+    fun eAdulto(): Boolean {
+        if (idade > 12) {
             return true
         }
         return false
