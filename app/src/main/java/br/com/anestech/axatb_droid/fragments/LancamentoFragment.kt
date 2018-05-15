@@ -1,7 +1,9 @@
 package br.com.anestech.axatb_droid.fragments
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,6 +36,8 @@ class LancamentoFragment : BaseFragment() {
         return view
     }
 
+    private var calculosHelper: CalculosHelper? = null
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         btn_profilaxia_recomendada.setOnClickListener {
@@ -44,22 +48,47 @@ class LancamentoFragment : BaseFragment() {
                 return@setOnClickListener
             }
 
-            val calculosHelper = CalculosHelper(
+             calculosHelper = CalculosHelper(
                     context,
                     paciente = paciente!!,
                     antibiotico = antibiotico
             )
 
-            calculosHelper.escolheCalculoPorCirurgia()
-
-
-            val intent = Intent(context, ResultActivity::class.java)
-            intent.putExtra("paciente", paciente)
-            intent.putExtra("antibiotico", antibiotico)
-            startActivity(intent)
+            if (paciente?.tipoCirurgia.equals(getString(TipoCirurgia.VASCULAR.string)) ||
+                    paciente?.tipoCirurgia.equals(getString(TipoCirurgia.CARDIACA.string)) ||
+                    paciente?.tipoCirurgia.equals(getString(TipoCirurgia.NEUROLOGICA.string)) ||
+                    paciente?.tipoCirurgia.equals(getString(TipoCirurgia.ORTOPEDICA.string))
+                    )  {
+                mostraDialogMRSA()
+            } else {
+                vaiParaATelaResultado()
+            }
         }
     }
 
+    private fun mostraDialogMRSA() {
+        val dialog = AlertDialog.Builder(context)
+                .setTitle(R.string.mrsa)
+                .setMessage(R.string.msg_mrsa)
+                .setPositiveButton(R.string.sim, { _, _ ->
+                    paciente?.riscoMRSA = true
+                    vaiParaATelaResultado()
+                })
+                .setNegativeButton(R.string.nao, { _, _ ->
+                    vaiParaATelaResultado()
+                })
+                .create()
+        dialog.show()
+    }
+
+    private fun vaiParaATelaResultado() {
+
+        calculosHelper?.escolheCalculoPorCirurgia()
+        val intent = Intent(context, ResultActivity::class.java)
+        intent.putExtra("paciente", paciente)
+        intent.putExtra("antibiotico", antibiotico)
+        startActivity(intent)
+    }
 
 
     private fun carregaSpinnerTipoCirurgia(view: View) {

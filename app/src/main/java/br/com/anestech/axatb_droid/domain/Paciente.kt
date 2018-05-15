@@ -13,6 +13,7 @@ class Paciente : Serializable  {
     var alergia_cefalosporinas:Boolean = false
     var alergia_penicilina: Boolean = false
     var alergia_sulfonamidas: Boolean = false
+    var riscoMRSA: Boolean = false
 
     fun eAdulto(): Boolean {
         if (idade > 12) {

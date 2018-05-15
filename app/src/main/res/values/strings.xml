@@ -30,4 +30,12 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mrsa">MRSA</string>
+    <string name="msg_mrsa">Risco de Staphylococcus aureus resistente à oxacilina ?</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
+    <string name="aviso">Aviso</string>
+    <string name="msg_cardiaca_result">Considerar o uso de Cefuxorima (1,5g em adultos, 50         mg/kg em crianças) profilática, se risco de pneumonia no pós-operatório</string>
+    <string name="ok">OK</string>
+    <string name="msg_cesaria_result">Evidências demonstram que a profilaxia antes da incisão não causa danos ao feto e é superior à realizada pós clampeamento do cordão umbilical</string>
 </resources>
