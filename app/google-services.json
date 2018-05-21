@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1092372772342",
+    "firebase_url": "https://axatbdroid.firebaseio.com",
+    "project_id": "axatbdroid",
+    "storage_bucket": "axatbdroid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092372772342:android:90e3e1ab67fa7ace",
+        "android_client_info": {
+          "package_name": "br.com.anestech.axatb_droid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092372772342-463qhfb47f6qb7abh00mht809c62mvia.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.anestech.axatb_droid",
+            "certificate_hash": "a99ed2f977cf8a2ef0f3c89af79d4ab8375e5834"
+          }
+        },
+        {
+          "client_id": "1092372772342-2rg2abqo5kca5ra7pccqu1u6je46cqun.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrMzp9Vr-l4b-WidT7U9pEoDBkag_e_8I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092372772342-2rg2abqo5kca5ra7pccqu1u6je46cqun.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
