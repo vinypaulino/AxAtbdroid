@@ -187,7 +187,6 @@ class CalculosHelper (context: Context, paciente: Paciente, antibiotico: Antibio
                 antibiotico.dosePreconizada = "$dosePorPeso mg (6mg/Kg)"
             }
         }
-
     }
 
     private fun calculoPlasticaToracica(){
@@ -249,15 +248,15 @@ class CalculosHelper (context: Context, paciente: Paciente, antibiotico: Antibio
                 // No fluxograma há uma condição (peso> 120 ) porém ambas tem o mesmo resultado
                 antibiotico.dose = 5.toFloat()
                 calculaDosePorPeso()
-                antibiotico.dosePreconizada = "Clindamicina 900mg + Gentamicina $dosePorPeso mg (5mg/Kg)"
+                antibiotico.dosePreconizada = "Clindamicina 900mg + Gentamicina ${dosePorPeso}mg (5mg/Kg)"
 
             }else{
                 antibiotico.dose = 10.toFloat()
                 calculaDosePorPeso()
-                antibiotico.dosePreconizada = "Clindamicina $dosePorPeso mg (10mg/Kg)"
+                antibiotico.dosePreconizada = "Clindamicina ${dosePorPeso}mg (10mg/Kg)"
                 antibiotico.dose = 5.toFloat()
                 calculaDosePorPeso()
-                antibiotico.dosePreconizada += "Gentamicina $dosePorPeso mg (5mg/Kg)"
+                antibiotico.dosePreconizada += "Gentamicina ${dosePorPeso}mg (5mg/Kg)"
 
             }
         } else {
@@ -272,7 +271,7 @@ class CalculosHelper (context: Context, paciente: Paciente, antibiotico: Antibio
             } else {
                 antibiotico.dose = 30.toFloat()
                 calculaDosePorPeso()
-                antibiotico.dosePreconizada = "$dosePorPeso mg (30mg/Kg)"
+                antibiotico.dosePreconizada = "${dosePorPeso}mg (30mg/Kg)"
             }
         }
     }
@@ -284,10 +283,10 @@ class CalculosHelper (context: Context, paciente: Paciente, antibiotico: Antibio
         if (paciente.riscoMRSA || paciente.alergia_cefalosporinas || paciente.alergia_penicilina){
             antibiotico.nome = "Vancomicina"
             antibiotico.tempoDose = "Administrar 60-120 minutos antes da incisão"
-            antibiotico.repique = "Repique de 6/6 horas durante o procedimento"
+            antibiotico.repique = "Sem repique. Administrar mais uma dose em 12 horas da primeira dose"
             antibiotico.dose = 15.toFloat()
             calculaDosePorPeso()
-            antibiotico.dosePreconizada = "$dosePorPeso mg (15mg/Kg)"
+            antibiotico.dosePreconizada = "${dosePorPeso}mg (15mg/Kg)"
 
         } else {
             antibiotico.nome = "Cefazolina"
@@ -302,7 +301,7 @@ class CalculosHelper (context: Context, paciente: Paciente, antibiotico: Antibio
             } else {
                 antibiotico.dose = 30.toFloat()
                 calculaDosePorPeso()
-                antibiotico.dosePreconizada = "$dosePorPeso mg(30mg/Kg)"
+                antibiotico.dosePreconizada = "${dosePorPeso}mg (30mg/Kg)"
             }
         }
     }
@@ -315,7 +314,7 @@ class CalculosHelper (context: Context, paciente: Paciente, antibiotico: Antibio
             antibiotico.tempoDose = "Administrar 60-120 minutos antes da incisão"
             antibiotico.dose = 15.toFloat()
             calculaDosePorPeso()
-            antibiotico.dosePreconizada = "$dosePorPeso mg (15mg/Kg)"
+            antibiotico.dosePreconizada = "${dosePorPeso}mg (15mg/Kg)"
         } else {
             antibiotico.nome = "Cefazolina"
             antibiotico.repique = "Repique de 4/4 horas durante o procedimento"

@@ -38,4 +38,7 @@
     <string name="msg_cardiaca_result">Considerar o uso de Cefuxorima (1,5g em adultos, 50         mg/kg em crianças) profilática, se risco de pneumonia no pós-operatório</string>
     <string name="ok">OK</string>
     <string name="msg_cesaria_result">Evidências demonstram que a profilaxia antes da incisão não causa danos ao feto e é superior à realizada pós clampeamento do cordão umbilical</string>
+    <string name="action_share">Compartilhar</string>
+    <string name="enviar_para">Enviar para...</string>
+    <string name="action_news">News</string>
 </resources>

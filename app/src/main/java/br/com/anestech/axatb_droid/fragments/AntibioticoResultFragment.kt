@@ -1,11 +1,11 @@
 package br.com.anestech.axatb_droid.fragments
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Toast
 import br.com.anestech.axatb_droid.R
 import br.com.anestech.axatb_droid.domain.Antibiotico
 import br.com.anestech.axatb_droid.domain.Paciente
@@ -23,7 +23,7 @@ class AntibioticoResultFragment : Fragment() {
         paciente = activity.intent.getSerializableExtra("paciente") as Paciente?
         antibiotico = activity.intent.getSerializableExtra("antibiotico") as Antibiotico?
 
-
+        setHasOptionsMenu(true)
 
         var view = inflater!!.inflate(R.layout.fragment_antibiotico_result, container, false)
 
@@ -48,6 +48,62 @@ class AntibioticoResultFragment : Fragment() {
         dialog.show()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        inflater?.inflate(R.menu.fragment_result_main, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == R.id.action_share){
+            compartilharResultado()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun compartilharResultado() {
+
+        var alergias : String = "Sem Alergias"
+
+        if (paciente?.alergia_cefalosporinas!!){
+            alergias = "Cefalosporinas"
+        }
+
+        if (paciente?.alergia_penicilina!!){
+            if (alergias == "Sem Alergias") {
+               alergias = "Penicilina"
+            } else {
+               alergias +=  ", Penicilina"
+            }
+        }
+
+        if (paciente?.alergia_sulfonamidas!!){
+            if (alergias == "Sem Alergias") {
+                alergias = "Sulfonamidas"
+            } else alergias += ", Sulfonamidas"
+        }
+
+        var conteudo : String
+        conteudo = "Recomendação \n \n" +
+                "Dados do paciente  \n" +
+                "Idade: ${paciente?.idade} anos  " +
+                "Peso: ${paciente?.peso} Kg \n\n" +
+                "Antibioticoprofilaxia: \n\n" +
+                "Tipo de Cirurgia: ${paciente?.tipoCirurgia} \n\n" +
+                "Alergias: $alergias \n\n" +
+                "Antibiótico: ${antibiotico?.nome} \n\n" +
+                "Dose: ${antibiotico?.dosePreconizada} \n\n " +
+                "Tempo da dose antes da incisão: ${antibiotico?.tempoDose} \n\n " +
+                "Repique: ${antibiotico?.repique} \n\n" +
+                "Prescrição: ${antibiotico?.prescricao} \n\n" +
+                "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\n" +
+                "AxATB by Anestech - T.I. em Anestesiologia - www.anestech.com.br"
+
+
+        val sendIntent = Intent()
+        sendIntent.action = Intent.ACTION_SEND
+        sendIntent.putExtra(Intent.EXTRA_TEXT, conteudo)
+        sendIntent.type = "text/plain"
+        startActivity(Intent.createChooser(sendIntent, resources.getText(R.string.enviar_para)))
+    }
 
     private fun carregaAntibioticoNaTela(view: View) {
         view.txt_tipo_cirurgia_result.text = paciente?.tipoCirurgia

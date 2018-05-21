@@ -2,9 +2,8 @@ package br.com.anestech.axatb_droid.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Toast
 import br.com.anestech.axatb_droid.R
 import br.com.anestech.axatb_droid.domain.Paciente
 import kotlinx.android.synthetic.main.fragment_dados_paciente_result.view.*
@@ -28,9 +27,10 @@ class DadosPacienteResultFragment : Fragment() {
         return view
     }
 
+
     private fun carregaDadosPacienteNaTela(view: View) {
-        view.txt_paciente_idade.text = paciente?.idade.toString()
-        view.txt_paciente_peso.text = paciente?.peso.toString()
+        view.txt_paciente_idade.text = "${paciente?.idade} anos"
+        view.txt_paciente_peso.text = "${paciente?.peso.toString()}Kg"
     }
 
 }

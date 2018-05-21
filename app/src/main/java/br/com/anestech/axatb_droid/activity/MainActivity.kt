@@ -12,8 +12,12 @@ import br.com.anestech.axatb_droid.domain.Paciente
 import br.com.anestech.axatb_droid.extensions.addFragment
 import br.com.anestech.axatb_droid.extensions.setupToolbar
 import br.com.anestech.axatb_droid.fragments.LancamentoFragment
+import br.com.anestech.axatb_droid.services.api.AxServerApi
+import br.com.anestech.axcalc.activities.main.ads.AdsGalleryFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
+import org.jetbrains.anko.doAsync
+import java.lang.Exception
 
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -32,6 +36,24 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         configuraNavDrawer()
         addFragment(R.id.frame_lancamento, LancamentoFragment())
+    }
+
+    override fun onResume() {
+        super.onResume()
+        doAsync {
+            AxServerApi.syncAds(applicationContext)
+        }
+
+        try {
+
+            val action = intent.action
+            if (action == "open_ads") {
+                loadFragmentAds()
+                intent.action = null
+            }
+        }catch (ex: Exception){
+            ex.printStackTrace()
+        }
     }
 
 
@@ -68,6 +90,12 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             else -> return super.onOptionsItemSelected(item)
         }
     }
+    private fun loadFragmentAds() {
+        supportFragmentManager.beginTransaction()
+                .add(R.id.frame_lancamento, AdsGalleryFragment.newInstance())
+                .addToBackStack(null)
+                .commit()
+    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
@@ -76,7 +104,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 // Handle the camera action
             }
             R.id.nav_gallery -> {
-
+                loadFragmentAds()
             }
             R.id.nav_slideshow -> {
 
