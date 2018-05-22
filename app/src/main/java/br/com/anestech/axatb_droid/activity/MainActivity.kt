@@ -34,7 +34,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 //                    .setAction("Action", null).show()
 //        }
 
-        configuraNavDrawer()
+  //      configuraNavDrawer()
         addFragment(R.id.frame_lancamento, LancamentoFragment())
     }
 
@@ -85,10 +85,10 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        when (item.itemId) {
-            R.id.action_settings -> return true
-            else -> return super.onOptionsItemSelected(item)
+        if (item.itemId == R.id.action_notifications) {
+            loadFragmentAds()
         }
+        return super.onOptionsItemSelected(item)
     }
     private fun loadFragmentAds() {
         supportFragmentManager.beginTransaction()
